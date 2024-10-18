@@ -1,0 +1,47 @@
+.card {
+    background-color: var(--secondary-bg-color); /* Retain the background color from variable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 18px; /* Slightly adjusted padding for a new feel */
+    border-radius: 12px; /* Modified the border radius for a subtle change */
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for a more pronounced effect */
+    transition: transform 0.3s ease; /* Added smooth transition on hover */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Added hover effect to give the card a lift */
+  }
+  
+  .cardTitle {
+    color: #fdfdfd; /* Adjusted color to a lighter white */
+    font-weight: 500; /* Slightly bolder font weight for better readability */
+    font-size: 28px; /* Adjusted font size for a balanced look */
+    margin-bottom: 15px; /* Increased margin for more spacing */
+  }
+  
+  .cardTitle span {
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #8fff4d; /* Slightly altered color for distinction */
+  }
+  
+  .failure {
+    color: #f4a542; /* Altered to a different tone for uniqueness */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 767px) {
+    .card {
+      padding: 30px 12px; /* Adjusted padding for smaller screens */
+    }
+  
+    .cardTitle {
+      font-size: 22px; /* Reduced font size for better fit on mobile */
+    }
+  }
+  

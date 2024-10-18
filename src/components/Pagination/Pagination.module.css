@@ -1,0 +1,53 @@
+.paginationContainer { /* Renamed class for clarity */
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.paginationContainer .pageNumber { /* Updated selector for better semantic clarity */
+    background: #3a9b6f; /* Darkened background color for better contrast */
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    border-radius: 6px; /* Slightly increased border radius for a softer look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Softer shadow for a more modern appearance */
+    color: #ffffff;
+}
+
+.paginationContainer button { /* Updated selector */
+    background: #f9f9f9; /* Lighter background for a fresh look */
+    color: #333; /* Changed text color for better readability */
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px; /* Adjusted radius for consistency with modern design */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    border: none; /* Removed border for a cleaner appearance */
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Added transition for hover effects */
+}
+
+.paginationContainer button:hover { /* Added hover effect */
+    background: #e0e0e0; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.paginationContainer button[disabled] {
+    opacity: 0.6; /* Increased opacity for disabled state */
+    cursor: not-allowed; /* Indicate non-interactive state */
+}
+
+@media (max-width: 767px) {
+    .paginationContainer button,
+    .paginationContainer .pageNumber { /* Updated selector */
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem; /* Consistent font size for mobile */
+    }
+}

@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary-bg-color: #3b3b3b; /* Dark background for primary sections */
+  --secondary-bg-color: #9b9b9b; /* Lighter background for secondary sections */
+  --font-heading: "Ubuntu", sans-serif; /* Font for headings */
+  --font-body: "Open Sans", sans-serif; /* Font for body text */
+}
+
+/* Universal Selector */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensure consistent box-sizing across elements */
+}
+
+* {
+  margin: 0; /* Remove default margin from all elements */
+}
+
+/* Set height for html and body */
+html,
+body {
+  height: 100%; /* Full height for both html and body */
+}
+
+body {
+  line-height: 1.5; /* Improved readability */
+  -webkit-font-smoothing: antialiased; /* Smoother text rendering in WebKit browsers */
+}
+
+/* Responsive images, videos, and SVGs */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* Prevent inline spacing */
+  max-width: 100%; /* Ensure responsiveness */
+}
+
+/* Inherit font styles for form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Inherit font styles from body */
+}
+
+/* Text Overflow Handling */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word; /* Prevent overflow issues */
+}
+
+/* Isolation for root elements */
+#root,
+#__next {
+  isolation: isolate; /* Prevent overlapping context */
+}
+
+/* Font Family Settings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: var(--font-heading); /* Heading and button fonts */
+}
+
+p,
+a {
+  font-family: var(--font-body); /* Body text and link fonts */
+}
+
+/* Optional: Additional styles for better UI */
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent element */
+}
+
+button {
+  cursor: pointer; /* Change cursor on hover */
+}
+
+button:disabled {
+  opacity: 0.5; /* Style for disabled buttons */
+  cursor: not-allowed; /* Change cursor for disabled buttons */
+}

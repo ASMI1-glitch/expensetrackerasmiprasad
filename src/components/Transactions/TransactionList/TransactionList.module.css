@@ -1,0 +1,21 @@
+.list,
+.noTransactions {
+  background-color: #ffffff; /* Use consistent color naming */
+  border-radius: 12px; /* Slightly increased border radius for a modern look */
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.transactionsContainer h2 {
+  font-size: 1.75rem; /* Converted to rem for better scalability */
+  color: #333; /* Changed to a darker color for better contrast */
+  font-style: italic;
+  margin-bottom: 12px; /* Increased bottom margin for better spacing */
+}
+
+@media (max-width: 767px) {
+  .transactionsContainer h2 {
+    text-align: center;
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+}

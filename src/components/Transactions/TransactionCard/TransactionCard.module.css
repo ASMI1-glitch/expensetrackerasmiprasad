@@ -1,0 +1,87 @@
+.card {
+    border-bottom: 1px solid #cccccc; /* Lightened the border color for a softer look */
+    padding-bottom: 10px; /* Slightly increased padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Reduced margin for consistency */
+  }
+  
+  .cardInner {
+    display: flex;
+    gap: 24px; /* Increased gap for better separation */
+    align-items: center;
+  }
+  
+  .cardIcon {
+    background-color: #e6e6e6; /* Slightly changed background for better contrast */
+    border-radius: 50%;
+    padding: 12px; /* Adjusted padding for a better fit */
+    font-size: 1.5rem; /* Increased font size for better visibility */
+  }
+  
+  .cardInfo h5 {
+    font-family: var(--font-body);
+    font-size: 1.1rem; /* Increased font size for titles */
+    color: #333; /* Darkened color for better readability */
+    font-weight: 500; /* Made the title bolder */
+  }
+  
+  .cardInfo p {
+    color: #b3b3b3; /* Lightened paragraph color */
+    font-size: 0.9rem; /* Reduced font size slightly */
+  }
+  
+  .cardPrice {
+    color: #ffcc00; /* Changed color for better contrast */
+    font-weight: 700;
+    font-size: 1.2rem; /* Increased font size for emphasis */
+  }
+  
+  .cardButtonWrapper {
+    display: flex;
+    gap: 10px; /* Slightly reduced gap for tighter grouping */
+  }
+  
+  .cardButtonWrapper button {
+    padding: 10px 15px; /* Adjusted padding for a more balanced look */
+    border-radius: 12px; /* Changed border radius for a modern look */
+    border: none; /* Clear border for a cleaner appearance */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Softer shadow for a modern aesthetic */
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s; /* Added transitions for hover effects */
+  }
+  
+  .cardDelete {
+    background-color: #ff4d4d; /* Changed to a slightly different shade of red */
+  }
+  
+  .cardEdit {
+    background-color: #ffcc00; /* Changed to a slightly different shade of yellow */
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 767px) {
+    .card {
+      flex-direction: column;
+      align-items: flex-start; /* Ensure alignment for smaller screens */
+    }
+  
+    .cardInner {
+      gap: 16px; /* Reduced gap for smaller screens */
+    }
+  
+    .cardButtonWrapper button {
+      font-size: 1.2rem; /* Consistent font size for mobile */
+      padding: 8px 10px; /* Adjusted padding */
+      border-radius: 8px; /* Updated radius for mobile */
+    }
+  
+    .cardInfo p {
+      font-size: 0.8rem; /* Reduced font size for mobile readability */
+    }
+  }
+  
