@@ -1,27 +1,27 @@
 import styles from './Pagination.module.css';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 
-export default function Pagination({ updatePage, currentPage, totalPages }) {
+export default function Pagination({ onPageChange, currentPage, totalPages }) { // Renamed prop for consistency
 
-    const handlePrev = () => {
+    const handlePrevPage = () => { // Updated function name for clarity
         if (currentPage > 1) {
-            updatePage(prevPage => prevPage - 1);
+            onPageChange(prevPage => prevPage - 1); // Using the new prop name
         }
     };
 
-    const handleNext = () => {
-        if (currentPage < totalPages) { // Simplified condition check
-            updatePage(prevPage => prevPage + 1);
+    const handleNextPage = () => { // Updated function name for clarity
+        if (currentPage < totalPages) {
+            onPageChange(prevPage => prevPage + 1); // Using the new prop name
         }
     };
 
     return (
-        <div className={styles.paginationContainer}> {/* Changed class name for clarity */}
-            <button onClick={handlePrev} disabled={currentPage === 1} className={styles.paginationButton}>
+        <div className={styles.paginationContainer}> {/* Class name remains for clarity */}
+            <button onClick={handlePrevPage} disabled={currentPage === 1} className={styles.paginationButton}>
                 <IoIosArrowRoundBack />
             </button>
-            <span className={styles.pageNumber}>{currentPage}</span> {/* Changed to span for better semantics */}
-            <button onClick={handleNext} disabled={currentPage === totalPages} className={styles.paginationButton}>
+            <span className={styles.pageNumber}>{currentPage}</span> {/* Semantically appropriate */}
+            <button onClick={handleNextPage} disabled={currentPage === totalPages} className={styles.paginationButton}>
                 <IoIosArrowRoundForward />
             </button>
         </div>

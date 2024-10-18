@@ -3,7 +3,7 @@ import ReactModal from "react-modal";
 // Set the app element for accessibility
 ReactModal.setAppElement("#root");
 
-const Modal = ({ isOpen, onClose, children }) => { // Renamed setIsOpen to onClose for clarity
+const Modal = ({ isOpen, onClose, children }) => {
   const customStyles = {
     content: {
       width: "90%", // Adjusted for better responsiveness
@@ -24,7 +24,7 @@ const Modal = ({ isOpen, onClose, children }) => { // Renamed setIsOpen to onClo
     <ReactModal
       isOpen={isOpen}
       onRequestClose={onClose} // Updated to use onClose for consistency
-      shouldCloseOnOverlayClick={true}
+      shouldCloseOnOverlayClick
       style={customStyles}
       closeTimeoutMS={200} // Added transition timing for a smoother close effect
     >

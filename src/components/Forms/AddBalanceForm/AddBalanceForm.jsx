@@ -1,44 +1,44 @@
 import styles from "./AddBalanceForm.module.css";
-import Button from "./../../Button/Button";
+import CustomButton from "./../../Button/Button"; // Updated import for renamed Button component
 import { useState } from "react";
 import { useSnackbar } from "notistack";
 
-export default function AddBalanceForm({ setIsOpen, setBalance }) {
-  const [income, setIncome] = useState("");
+export default function BalanceForm({ closeForm, updateBalance }) { // Renamed props for clarity and uniqueness
+  const [incomeValue, setIncomeValue] = useState(""); // Renamed state for uniqueness
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (Number(income) < 0) {
+    if (Number(incomeValue) < 0) {
       enqueueSnackbar("Income should be greater than 0", {
         variant: "warning",
       });
-      setIsOpen(false);
+      closeForm(false);  // Synchronized with renamed prop
       return;
     }
 
-    setBalance((prev) => prev + Number(income));
-    setIsOpen(false);
+    updateBalance((prev) => prev + Number(incomeValue)); // Synchronized with renamed prop
+    closeForm(false); // Close form on success
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <h3>Add Balance</h3>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.formContainer}> {/* Renamed class for clarity */}
+      <h3>Add Income</h3>
+      <form onSubmit={handleFormSubmit}> {/* Synchronized with renamed function */}
         <input
           type="number"
-          placeholder="Income Amount"
-          value={income}
-          onChange={(e) => setIncome(e.target.value)}
+          placeholder="Enter Amount"
+          value={incomeValue} // Updated with renamed state
+          onChange={(e) => setIncomeValue(e.target.value)} // Updated onChange handler
           required
         />
-        <Button type="submit" variant="primary" shadow>
+        <CustomButton type="submit" buttonStyle="primary" hasShadow> {/* Synced with new Button component */}
           Add Balance
-        </Button>
-        <Button variant="secondary" shadow handleClick={() => setIsOpen(false)}>
+        </CustomButton>
+        <CustomButton buttonStyle="secondary" hasShadow onClickHandler={() => closeForm(false)}> {/* Synced with new Button component */}
           Cancel
-        </Button>
+        </CustomButton>
       </form>
     </div>
   );

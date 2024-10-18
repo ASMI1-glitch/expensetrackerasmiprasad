@@ -1,39 +1,22 @@
-.formWrapper h3 {
-    font-size: 2rem; /* Increased font size for better readability */
-    margin-bottom: 16px; /* Added more space below the heading */
-    color: #333; /* Darker color for better contrast */
-    text-align: center; /* Center the title for a more polished look */
-  }
-  
-  .formWrapper form {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Increased gap for better spacing */
-  }
-  
-  .formWrapper input,
-  .formWrapper select {
-    background: #f9f9f9; /* Lighter background for input fields */
-    border: 1px solid #ccc; /* Added border for better visibility */
-    outline: none; /* Removes the default outline */
-    color: #333; /* Darker text color */
-    font-size: 1rem; /* Consistent font size */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow for a modern look */
-    padding: 12px; /* Padding for comfort */
-    border-radius: 8px; /* Adjusted border radius for a more subtle effect */
-    font-family: var(--font-body); /* Using the variable for font */
-    box-sizing: border-box; /* Ensures padding is included in total width/height */
-  }
-  
-  .formWrapper button {
-    width: 100%; /* Make buttons full width for consistency */
-  }
-  
-  /* Media query for smaller screens */
-  @media (max-width: 767px) {
-    .formWrapper form {
-      grid-template-columns: 1fr; /* Single column layout on mobile */
-      padding: 0 10px; /* Added padding for better spacing on mobile */
-    }
-  }
-  
+/* ExpenseForm.module.css */
+.formContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}

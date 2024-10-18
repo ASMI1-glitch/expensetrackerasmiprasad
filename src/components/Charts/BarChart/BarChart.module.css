@@ -1,21 +1,19 @@
-.chartContainer h2 {
-    font-size: 1.75rem; /* Converted to rem units for better scalability */
-    color: #f1f1f1; /* Slightly changed the text color */
-    font-style: italic;
-    margin-bottom: 12px; /* Adjusted margin for better spacing */
-  }
-  
-  .chartWrapper {
-    background-color: #fafafa; /* Lightened background for a cleaner look */
-    border-radius: 12px; /* Slightly increased border radius for smoother corners */
-    padding: 8px 22px; /* Adjusted padding for balance */
-  }
-  
-  /* Responsive styles for mobile view */
-  @media (max-width: 767px) {
-    .chartContainer h2 {
-      text-align: center;
-      font-size: 1.5rem; /* Reduced font size for smaller screens */
-    }
-  }
-  
+/* BarChart.module.css */
+.chartContainer {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chartTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.chartWrapper {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+}

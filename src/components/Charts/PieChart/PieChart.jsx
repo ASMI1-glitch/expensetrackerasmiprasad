@@ -1,54 +1,36 @@
-import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
+import React from 'react';
+import { Pie } from 'react-chartjs-2';
 
-const COLORS = ["#A000FF", "#FF9304", "#FDE006"];
-
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-}) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+const ExpensePieChart = ({ categorySpends }) => {
+  const data = {
+    labels: Object.keys(categorySpends),
+    datasets: [
+      {
+        data: Object.values(categorySpends),
+        backgroundColor: [
+          '#FF6384', // Food
+          '#36A2EB', // Entertainment
+          '#FFCE56', // Travel
+          '#4BC0C0', // Health
+          '#9966FF', // Utilities
+        ],
+        hoverBackgroundColor: [
+          '#FF6384',
+          '#36A2EB',
+          '#FFCE56',
+          '#4BC0C0',
+          '#9966FF',
+        ],
+      },
+    ],
+  };
 
   return (
-    <text
-      x={x}
-      y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
-      dominantBaseline="central"
-    >
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
+    <div>
+      <h2>Expense Distribution by Category</h2>
+      <Pie data={data} />
+    </div>
   );
 };
 
-export default function ExpensePieChart({ data }) {
-  return (
-    <ResponsiveContainer width="100%" height={250}>
-      <PieChart width={400} height={400}>
-        <Pie
-          data={data}
-          cx="50%"
-          cy="50%"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius="80%"
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Legend iconType="rect" verticalAlign="bottom" />
-      </PieChart>
-    </ResponsiveContainer>
-  );
-}
+export default ExpensePieChart;

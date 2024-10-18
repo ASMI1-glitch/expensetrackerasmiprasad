@@ -1,7 +1,8 @@
+/* Button.module.css */
 .button {
   background: #e3e3e3;
-  border: 0;
-  font-weight: 700;
+  border: none;
+  font-weight: bold;
   font-size: 1rem;
   border-radius: 15px;
   padding: 12px 30px;
@@ -10,25 +11,14 @@
 }
 
 .primary {
-  background: #f4bb4a;
+  background-color: #f4bb4a;
   color: #ffffff;
 }
 
 .secondary {
-  background: #e3e3e3;
+  background-color: #e3e3e3;
   color: #000;
-  font-weight: 400;
-  width: fit-content;
-}
-
-.success {
-  background: linear-gradient(90deg, #b5dc52, #89e148);
-  color: #fff;
-}
-
-.failure {
-  background: linear-gradient(90deg, #ff9595, #ff4747, #ff3838);
-  color: #fff;
+  font-weight: normal;
 }
 
 .shadow {

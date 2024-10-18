@@ -1,26 +1,30 @@
-import React from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
-import styles from "./BarChart.module.css";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
 
-export default function ExpenseBarChart({ data }) {
+const ExpenseBarChart = ({ categorySpends }) => {
+  const data = {
+    labels: Object.keys(categorySpends),
+    datasets: [
+      {
+        label: 'Expenses by Category',
+        data: Object.values(categorySpends),
+        backgroundColor: [
+          '#FF6384', // Food
+          '#36A2EB', // Entertainment
+          '#FFCE56', // Travel
+          '#4BC0C0', // Health
+          '#9966FF', // Utilities
+        ],
+      },
+    ],
+  };
+
   return (
-    <div className={styles.expenseChart}>
-      <h2>Top Expenses</h2>
-
-      <div className={styles.barWrapper}>
-        <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={data} layout="vertical">
-            <XAxis type="number" axisLine={false} display="none" />
-            <YAxis
-              type="category"
-              width={100}
-              dataKey="name"
-              axisLine={false}
-            />
-            <Bar dataKey="value" fill="#8884d8" barSize={25} />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+    <div>
+      <h2>Expenses Overview</h2>
+      <Bar data={data} />
     </div>
   );
-}
+};
+
+export default ExpenseBarChart;

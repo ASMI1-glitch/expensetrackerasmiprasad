@@ -18,4 +18,9 @@
     text-align: center;
     font-size: 1.5rem; /* Adjusted font size for smaller screens */
   }
+
+  .list,
+  .noTransactions { /* Added mobile styles for better spacing */
+    padding: 16px; /* Reduced padding for smaller screens */
+  }
 }
