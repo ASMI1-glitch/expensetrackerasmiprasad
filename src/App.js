@@ -1,7 +1,6 @@
 import React from "react"; 
 import "./App.css";
 
-
 // Explicitly importing React for better clarity
 import Home from "./Home";
 import { SnackbarProvider } from "notistack";

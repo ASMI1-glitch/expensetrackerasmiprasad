@@ -1,44 +1,47 @@
 .container {
-    background: var(--primary-bg-color); /* Primary background color */
-    padding: 24px; /* Padding around the container */
-    min-height: 100vh; /* Full viewport height */
-  }
-  
+  background: var(--primary-bg-color); /* Primary background color */
+  padding: 24px; /* Padding around the container */
+  min-height: 100vh; /* Full viewport height */
+}
+
+.container h1 {
+  color: #ffffff; /* White color for headings */
+  margin-bottom: 16px; /* Increased bottom margin for spacing */
+  text-align: center; /* Center the title for consistency */
+  font-size: 2rem; /* Increased font size for prominence */
+  font-weight: 600; /* Increased font weight for better visibility */
+}
+
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid for cards */
+  gap: 32px; /* Space between cards */
+  padding: 48px; /* Padding around cards */
+  background: #626262; /* Background color for the cards section */
+  border-radius: 12px; /* Increased border radius for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  margin-bottom: 32px; /* Space below the cards section */
+}
+
+.transactionsWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Two-column layout for transactions */
+  gap: 32px; /* Space between columns */
+}
+
+@media (max-width: 767px) {
   .container h1 {
-    color: #ffffff; /* White color for headings */
-    margin-bottom: 16px; /* Increased bottom margin for spacing */
-    text-align: center; /* Center the title for consistency */
-  }
-  
-  .cardsWrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid for cards */
-    gap: 32px; /* Space between cards */
-    padding: 48px; /* Padding around cards */
-    background: #626262; /* Background color for the cards section */
-    border-radius: 12px; /* Increased border radius for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
-    margin-bottom: 32px; /* Space below the cards section */
-  }
-  
-  .transactionsWrapper {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Two-column layout for transactions */
-    gap: 32px; /* Space between columns */
-  }
-  
-  /* Mobile styles */
-  @media (max-width: 767px) {
-    .container h1 {
       text-align: center; /* Center the title on mobile */
-    }
-    .cardsWrapper {
+      font-size: 1.5rem; /* Adjusted font size for better readability on mobile */
+  }
+
+  .cardsWrapper {
       padding: 16px; /* Reduced padding for mobile */
       grid-template-columns: 1fr; /* Single column layout on mobile */
       gap: 24px; /* Adjusted gap for mobile */
-    }
-    .transactionsWrapper {
-      grid-template-columns: 1fr; /* Single column layout for transactions on mobile */
-    }
   }
-  
+
+  .transactionsWrapper {
+      grid-template-columns: 1fr; /* Single column layout for transactions on mobile */
+  }
+}
